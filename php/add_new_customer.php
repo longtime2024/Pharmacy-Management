@@ -6,7 +6,7 @@
     $address = ucwords($_GET["address"]);
     $doctor_name = ucwords($_GET["doctor_name"]);
     $doctor_address = ucwords($_GET["doctor_address"]);
-
+//polisi//
     $query = "SELECT * FROM customers WHERE CONTACT_NUMBER = '$contact_number'";
     $result = mysqli_query($con, $query);
     $row = mysqli_fetch_array($result);
