@@ -16,7 +16,9 @@
     </head>
     <body>
       <script type="text/javascript">
+        session_start();
       window.location.href = "http://localhost/Pharmacy-Management/index.html";
+      // komentar
       </script>
     </body>
     <script>
