@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poiret+One');
 
 body {
-  background-image: url("../images/pills2.jpg");
+  background-image: url("../images/login.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
@@ -15,15 +15,15 @@ body {
 }
 
 .card {
-  width:60%;
+  width:35%;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0,0,0,0.5) !important;
+  background-color: rgba(255, 245, 245, 0.829) !important;
 }
 
 .logo .logo-caption {
 	font-family: 'Poiret One', cursive;
-	color: #ffffff;
+	color: #495DFF;
 	text-align: center;
 	margin-bottom: 25px;
 }
@@ -35,7 +35,7 @@ body {
 }
 
 .logo .tweak {
-  color: #ff5252;
+  color: #007739;
   font-weight: bold;
 }
 
@@ -50,7 +50,7 @@ body {
 
 .login-form .input-group-text {
   width: 100%;
-  background: #ff5252;
+  background: #495DFF;
   border: 0px;
 }
 
@@ -59,7 +59,7 @@ body {
 }
 
 .login-form input, .login-form textarea {
-  background: #444444;
+  background: #00773a80;
 	border: 0px;
 	color: white;
 	font-family: 'Nunito', sans-serif;
@@ -74,7 +74,7 @@ body {
 }
 
 .login-form button.btn-custom {
-  background: #ff5252;
+  background: #007739;
 	border-color: rgba(48, 46, 45, 1);
   color: #ffffff;
   font-weight: bold;
@@ -87,7 +87,7 @@ body {
 	-o-transition: all 500ms ease;
 	transition: all 500ms ease;
 	background: rgba(48, 46, 45, 1);
-	border-color: #ff5252;
+	border-color: #495DFF;
 }
 
 /* Chrome, Safari, Edge, Opera */

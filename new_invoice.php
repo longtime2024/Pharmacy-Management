@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>New Invoice</title>
+    <title>Tami Farma</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 		<script src="bootstrap/js/jquery.min.js"></script>
 		<script src="bootstrap/js/bootstrap.min.js"></script>
@@ -42,7 +42,7 @@
         <!-- header section -->
         <?php
           require "php/header.php";
-          createHeader('clipboard', 'New Invoice', 'Create New Invoice');
+          createHeader('clipboard', 'Faktur Baru', 'Buat Faktur Baru');
         ?>
         <!-- header section end -->
 
@@ -51,21 +51,21 @@
           <!-- customer details content -->
           <div class="row col col-md-12">
             <div class="col col-md-3 form-group">
-              <label class="font-weight-bold" for="customers_name">Customer Name :</label>
-              <input id="customers_name" type="text" class="form-control" placeholder="Customer Name" name="customers_name" onkeyup="showSuggestions(this.value, 'customer');">
+              <label class="font-weight-bold" for="customers_name">Nama Pelanggan :</label>
+              <input id="customers_name" type="text" class="form-control" placeholder="Nama Pelanggan" name="customers_name" onkeyup="showSuggestions(this.value, 'customer');">
               <code class="text-danger small font-weight-bold float-right" id="customer_name_error" style="display: none;"></code>
               <div id="customer_suggestions" class="list-group position-fixed" style="z-index: 1; width: 18.30%; overflow: auto; max-height: 200px;"></div>
             </div>
             <div class="col col-md-3 form-group">
-              <label class="font-weight-bold" for="customers_address">Address :</label>
-              <input id="customers_address" type="text" class="form-control" name="customers_address" placeholder="Address" disabled>
+              <label class="font-weight-bold" for="customers_address">Alamat :</label>
+              <input id="customers_address" type="text" class="form-control" name="customers_address" placeholder="Alamat" disabled>
             </div>
             <div class="col col-md-2 form-group">
-              <label class="font-weight-bold" for="invoice_number">Invoice Number :</label>
+              <label class="font-weight-bold" for="invoice_number">Nomor Faktur :</label>
               <input id="invoice_number" type="text" class="form-control" name="invoice_number" placeholder="Invoice Number" disabled>
             </div>
             <div class="col col-md-2 form-group">
-              <label class="font-weight-bold" for="">Payment Type :</label>
+              <label class="font-weight-bold" for="">Tipe Pembayaran :</label>
               <select id="payment_type" class="form-control">
               	<option value="1">Cash Payment</option>
               	<option value="2">Card Payment</option>
@@ -73,7 +73,7 @@
               </select>
             </div>
             <div class="col col-md-2 form-group">
-               <label class="font-weight-bold" for="">Date :</label>
+               <label class="font-weight-bold" for="">Tanggal :</label>
               <input type="date" class="datepicker form-control hasDatepicker" id="invoice_date" value='<?php echo date('Y-m-d'); ?>' onblur="checkDate(this.value, 'date_error');">
               <code class="text-danger small font-weight-bold float-right" id="date_error" style="display: none;"></code>
             </div>
@@ -83,12 +83,12 @@
           <!-- new user button -->
           <div class="row col col-md-12">
             <div class="col col-md-2 form-group">
-              <button class="btn btn-primary form-control" onclick="document.getElementById('add_new_customer_model').style.display = 'block';">New Customer</button>
+              <button class="btn btn-primary form-control" onclick="document.getElementById('add_new_customer_model').style.display = 'block';">Pelanggan Baru</button>
             </div>
             <div class="col col-md-1 form-group"></div>
             <div class="col col-md-2 form-group">
-              <label class="font-weight-bold" for="customers_contact_number">Contact Number :</label>
-              <input id="customers_contact_number" type="number" class="form-control" name="customers_contact_number" placeholder="Contact Number" disabled>
+              <label class="font-weight-bold" for="customers_contact_number">Nomor Kontak :</label>
+              <input id="customers_contact_number" type="number" class="form-control" name="customers_contact_number" placeholder="Nomor Kontak" disabled>
             </div>
           </div>
           <!-- closing new user button -->
@@ -100,15 +100,15 @@
           <!-- add medicines -->
           <div class="row col col-md-12">
             <div class="row col col-md-12 font-weight-bold">
-              <div class="col col-md-2">Medicine Name</div>
-              <div class="col col-md-2">Batch ID</div>
-              <div class="col col-md-1">Ava.Qty.</div>
-              <div class="col col-md-1">Expiry</div>
-              <div class="col col-md-1">Quantity</div>
-              <div class="col col-md-1">MRP</div>
-              <div class="col col-md-1">Discount(%)</div>
+              <div class="col col-md-2">Nama Obat</div>
+              <div class="col col-md-2">Id Kelompok</div>
+              <div class="col col-md-1">Jumlah</div>
+              <div class="col col-md-1">Kadaluwarsa</div>
+              <div class="col col-md-1">Kuantitas</div>
+              <div class="col col-md-1">Pengontrol</div>
+              <div class="col col-md-1">Diskon</div>
               <div class="col col-md-1">Total</div>
-              <div class="col col-md-2">Action</div>
+              <div class="col col-md-2">Tindakan</div>
             </div>
           </div>
           <div class="col col-md-12">
@@ -123,15 +123,15 @@
           <div class="row col col-md-12">
             <div class="col col-md-6 form-group"></div>
             <div class="col col-md-2 form-group float-right">
-              <label class="font-weight-bold" for="">Total Amount:</label>
+              <label class="font-weight-bold" for="">Jumlah Total :</label>
               <input type="text" class="form-control" value="0" id="total_amount" disabled>
             </div>
             <div class="col col-md-2 form-group float-right">
-              <label class="font-weight-bold" for="">Total Discount :</label>
+              <label class="font-weight-bold" for="">Total Diskon :</label>
               <input type="text" class="form-control" value="0" id="total_discount" disabled>
             </div>
             <div class="col col-md-2 form-group float-right">
-              <label class="font-weight-bold" for="">Net Total :</label>
+              <label class="font-weight-bold" for="">Jumlah Bersih :</label>
               <input type="text" class="form-control" value="0" id="net_total" disabled>
             </div>
           </div>
@@ -155,11 +155,11 @@
             </div>
             <div class="col col-md-4 form-group"></div>
             <div class="col col-md-2 form-group float-right">
-              <label class="font-weight-bold" for="">Paid Amount :</label>
+              <label class="font-weight-bold" for="">Jumlah Pembayaran :</label>
               <input type="text" class="form-control" name="total_discount" onkeyup="getChange(this.value);">
             </div>
             <div class="col col-md-2 form-group float-right">
-              <label class="font-weight-bold" for="">Change :</label>
+              <label class="font-weight-bold" for="">Kembalian :</label>
               <input type="text" class="form-control" id="change_amt" disabled>
             </div>
           </div>

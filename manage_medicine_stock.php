@@ -25,7 +25,7 @@
         <!-- header section -->
         <?php
           require "php/header.php";
-          createHeader('shopping-bag', 'Manage Medicines Stock', 'Manage Existing Medicine Stock');
+          createHeader('shopping-bag', 'Kelola Setok Obat', 'Pengelolaan Setok Obat');
         ?>
         <!-- header section end -->
 
@@ -33,11 +33,11 @@
         <div class="row">
 
           <div class="col-md-12 form-group form-inline">
-            <label class="font-weight-bold" for="">Search :&emsp;</label>
-            <input type="text" class="form-control" id="by_name" placeholder="By Medicine Name" onkeyup="searchMedicineStock(this.value, 'NAME');">
-            &emsp;<input type="text" class="form-control" id="by_generic_name" placeholder="By Generic Name" onkeyup="searchMedicineStock(this.value, 'GENERIC_NAME');">
-            &emsp;<input type="text" class="form-control" id="by_suppliers_name" placeholder="By Supplier Name" onkeyup="searchMedicineStock(this.value, 'SUPPLIER_NAME');">
-            &emsp;<button class="btn btn-danger font-weight-bold" onclick="searchMedicineStock('0', 'QUANTITY');">Out of Stock</button>
+            <label class="font-weight-bold" for="">Mencari :&emsp;</label>
+            <input type="text" class="form-control" id="by_name" placeholder="Nama Obat" onkeyup="searchMedicineStock(this.value, 'NAME');">
+            &emsp;<input type="text" class="form-control" id="by_generic_name" placeholder="Nama Generik" onkeyup="searchMedicineStock(this.value, 'GENERIC_NAME');">
+            &emsp;<input type="text" class="form-control" id="by_suppliers_name" placeholder="Nama Pemasok" onkeyup="searchMedicineStock(this.value, 'SUPPLIER_NAME');">
+            &emsp;<button class="btn btn-danger font-weight-bold" onclick="searchMedicineStock('0', 'QUANTITY');">Setok Habis</button>
             &emsp;<button class="btn btn-warning font-weight-bold" onclick="searchMedicineStock('', 'EXPIRY_DATE');">Expired</button>
             &emsp;<button class="btn btn-success font-weight-bold" onclick="cancel();"><i class="fa fa-refresh"></i></button>
           </div>
@@ -52,17 +52,17 @@
             	<table class="table table-bordered table-striped table-hover">
             		<thead>
             			<tr>
-            				<th style="width: 1%;">SL.</th>
-            				<th style="width: 14%;">Medicine Name</th>
-                    <th style="width: 5%;">Packing</th>
-                    <th style="width: 14%;">Generic Name</th>
-                    <th style="width: 10%;">Batch ID</th>
-                    <th style="width: 8%;">Ex. Date (mm/yy)</th>
-            				<th style="width: 15%;">Supplier</th>
-                    <th style="width: 7%;">Qty.</th>
-                    <th style="width: 8%;">M.R.P.</th>
-                    <th style="width: 8%;">Rate</th>
-                    <th style="width: 10%;">Action</th>
+            				<th style="width: 1%;">No.</th>
+            				<th style="width: 14%;">Nama Obat</th>
+                    <th style="width: 5%;">Dikemas</th>
+                    <th style="width: 14%;">Nama Generik</th>
+                    <th style="width: 10%;">Id</th>
+                    <th style="width: 8%;">Expired</th>
+            				<th style="width: 15%;">Pemasok</th>
+                    <th style="width: 7%;">Jumlah</th>
+                    <th style="width: 8%;">Control</th>
+                    <th style="width: 8%;">Nilai</th>
+                    <th style="width: 10%;">Tindakan</th>
             			</tr>
             		</thead>
                 <tbody id="medicines_stock_div">

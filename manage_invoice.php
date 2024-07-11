@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Manage Invoice</title>
+    <title>Kelola Faktur</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 		<script src="bootstrap/js/jquery.min.js"></script>
 		<script src="bootstrap/js/bootstrap.min.js"></script>
@@ -24,7 +24,7 @@
         <!-- header section -->
         <?php
           require "php/header.php";
-          createHeader('address-book', 'Manage Invoice', 'Manage Existing Invoice');
+          createHeader('address-book', 'Kelola Faktur', 'Pengelolaan Faktur');
         ?>
         <!-- header section end -->
 
@@ -32,10 +32,10 @@
         <div class="row">
 
           <div class="col-md-12 form-group form-inline">
-            <label class="font-weight-bold" for="">Search :&emsp;</label>
-            <input type="number" class="form-control" id="by_invoice_number" placeholder="By Invoice Nuber" onkeyup="searchInvoice(this.value, 'INVOICE_ID');">
-            &emsp;<input type="text" class="form-control" id="by_customer_name" placeholder="By Customer Name" onkeyup="searchInvoice(this.value, 'NAME');">
-            &emsp;<label class="font-weight-bold" for="">By Invoice Date :&emsp;</label>
+            <label class="font-weight-bold" for="">Mencari :&emsp;</label>
+            <input type="number" class="form-control" id="by_invoice_number" placeholder="Nomor Faktur" onkeyup="searchInvoice(this.value, 'INVOICE_ID');">
+            &emsp;<input type="text" class="form-control" id="by_customer_name" placeholder="Nama Pelanggan" onkeyup="searchInvoice(this.value, 'NAME');">
+            &emsp;<label class="font-weight-bold" for="">Tanggal Faktur :&emsp;</label>
             <input type="date" class="form-control" id="by_date" onchange="searchInvoice(this.value, 'INVOICE_DATE');">
             &emsp;<button class="btn btn-success font-weight-bold" onclick="refresh();"><i class="fa fa-refresh"></i></button>
           </div>
@@ -50,14 +50,14 @@
             	<table class="table table-bordered table-striped table-hover">
             		<thead>
             			<tr>
-            				<th>SL.</th>
-            				<th>Invoice No</th>
-            				<th>Customer Name</th>
-            				<th>Date</th>
-                    <th>Total Amount</th>
-                    <th>Total Discount</th>
-                    <th>Net Total</th>
-                    <th>Action</th>
+            				<th>No.</th>
+            				<th>No Faktur</th>
+            				<th>Nama Pelanggan</th>
+            				<th>Tanggal</th>
+                    <th>Jumlah Total</th>
+                    <th>Total Diskon</th>
+                    <th>Jumlah Bersih</th>
+                    <th>Tindakan</th>
             			</tr>
             		</thead>
                 <tbody id="invoices_div">

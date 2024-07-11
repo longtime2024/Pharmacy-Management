@@ -25,7 +25,7 @@
         <!-- header section -->
         <?php
           require "php/header.php";
-          createHeader('handshake', 'Manage Customer', 'Manage Existing Customer');
+          createHeader('handshake', 'Kelola Pelanggan', 'Pengelolaan Pelanggan');
         ?>
         <!-- header section end -->
 
@@ -33,8 +33,8 @@
         <div class="row">
 
           <div class="col-md-12 form-group form-inline">
-            <label class="font-weight-bold" for="">Search :&emsp;</label>
-            <input type="text" class="form-control" id="" placeholder="Search Customer" onkeyup="searchCustomer(this.value);">
+            <label class="font-weight-bold" for="">Mencari :&emsp;</label>
+            <input type="text" class="form-control" id="" placeholder="Pelanggan" onkeyup="searchCustomer(this.value);">
           </div>
 
           <div class="col col-md-12">
@@ -46,14 +46,14 @@
             	<table class="table table-bordered table-striped table-hover">
             		<thead>
             			<tr>
-            				<th style="width: 2%;">SL.</th>
-                    <th style="width: 10%;">Customer ID</th>
-            				<th style="width: 13%;">Customer Name</th>
-                    <th style="width: 13%;">Contact Number</th>
-                    <th style="width: 17%;">Address</th>
-                    <th style="width: 13%;">Doctor's Name</th>
-                    <th style="width: 17%;">Doctor's Address</th>
-                    <th style="width: 15%;">Action</th>
+            				<th style="width: 2%;">No.</th>
+                    <th style="width: 10%;">Id Pelanggan</th>
+            				<th style="width: 13%;">Nama Pelanggan</th>
+                    <th style="width: 13%;">Nomor Kontak</th>
+                    <th style="width: 17%;">Alamat</th>
+                    <th style="width: 13%;">Nama Dokter</th>
+                    <th style="width: 17%;">Alamat Dokter</th>
+                    <th style="width: 15%;">Tindakan</th>
             			</tr>
             		</thead>
             		<tbody id="customers_div">

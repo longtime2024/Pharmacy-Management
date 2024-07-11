@@ -66,19 +66,19 @@
                   </div>
                 ';
               }
-              createSection1('manage_customer.php', 'Total Customer', 'customers');
-              createSection1('manage_supplier.php', 'Total Supplier', 'suppliers');
-              createSection1('manage_medicine.php', 'Total Medicine', 'medicines');
-              createSection1('manage_medicine_stock.php?out_of_stock', 'Out of Stock', 'medicines_stock');
-              createSection1('manage_medicine_stock.php?expired', 'Expired', 'medicines_stock');
-              createSection1('manage_invoice.php', 'Total Invoice', 'invoices');
+              createSection1('manage_customer.php', 'Total Pelanggan', 'customers');
+              createSection1('manage_supplier.php', 'Total Pemasok', 'suppliers');
+              createSection1('manage_medicine.php', 'Total Obat', 'medicines');
+              createSection1('manage_medicine_stock.php?out_of_stock', 'Setok Habis', 'medicines_stock');
+              createSection1('manage_medicine_stock.php?expired', 'Kadaluwarsa', 'medicines_stock');
+              createSection1('manage_invoice.php', 'Jumlah Faktur', 'invoices');
             ?>
 
           </div>
 
           <div class="col col-xs-4 col-sm-4 col-md-4 col-lg-4" style="padding: 7px 0; margin-left: 15px;">
             <div class="todays-report">
-              <div class="h5">Todays Report</div>
+              <div class="h5">Laporan Hari ini</div>
               <table class="table table-bordered table-striped table-hover">
                 <tbody>
                   <?php
@@ -95,8 +95,8 @@
                       while($row = mysqli_fetch_array($result))
                         $total = $total + $row['NET_TOTAL'];
                     ?>
-                    <th>Total Sales</th>
-                    <th class="text-success">Rs. <?php echo $total; ?></th>
+                    <th>Jumlah Penjualan</th>
+                    <th class="text-success">Rp. <?php echo $total; ?></th>
                   </tr>
                   <tr>
                     <?php
@@ -108,8 +108,8 @@
                         $total = $total + $row['TOTAL_AMOUNT'];
                     }
                     ?>
-                    <th>Total Purchase</th>
-                    <th class="text-danger">Rs. <?php echo $total; ?></th>
+                    <th>Jumlah Pembelian</th>
+                    <th class="text-danger">Rp. <?php echo $total; ?></th>
                   </tr>
                 </tbody>
               </table>
@@ -135,13 +135,13 @@
                 </div>
               ';
             }
-            createSection2('address-card', 'new_invoice.php', 'Create New Invoice');
-            createSection2('handshake', 'add_customer.php', 'Add New Customer');
-            createSection2('shopping-bag', 'add_medicine.php', 'Add New Medicine');
-            createSection2('group', 'add_supplier.php', 'Add New Supplier');
-            createSection2('bar-chart', 'add_purchase.php', 'Add New Purchase');
-            createSection2('book', 'sales_report.php', 'Sales Report');
-            createSection2('book', 'purchase_report.php', 'Purchase Report');
+            createSection2('address-card', 'new_invoice.php', 'Buat Faktur Baru');
+            createSection2('handshake', 'add_customer.php', 'Tambah Pelanggan');
+            createSection2('shopping-bag', 'add_medicine.php', 'Tambah Obat');
+            createSection2('group', 'add_supplier.php', 'Tambah Pemasok');
+            createSection2('bar-chart', 'add_purchase.php', 'Tambah Pembelian');
+            createSection2('book', 'sales_report.php', 'laporan Penjualan');
+            createSection2('book', 'purchase_report.php', 'Laporan Pembelian');
           ?>
 
         </div>

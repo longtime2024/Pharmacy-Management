@@ -27,18 +27,18 @@
         <!-- header section -->
         <?php
           require "php/header.php";
-          createHeader('bar-chart', 'Manage Purchase', 'Manage Existing Purchase');
+          createHeader('bar-chart', 'Kelola Pembelian', 'Pengelolaan Pembelian');
         ?>
         <!-- header section end -->
 
         <!-- form content -->
         <div class="row">
           <div class="col-md-12 form-group form-inline">
-            <label class="font-weight-bold" for="">Search :&emsp;</label>
-            <input type="number" class="form-control" id="by_voucher_number" placeholder="By Voucher Number" onkeyup="searchPurchase(this.value, 'VOUCHER_NUMBER');">
-            &emsp;<input type="text" class="form-control" id="by_suppliers_name" placeholder="By Supplier Name" onkeyup="searchPurchase(this.value, 'SUPPLIER_NAME');">
-            &emsp;<input type="number" class="form-control" id="by_invoice_number" placeholder="By Invoice" onkeyup="searchPurchase(this.value, 'INVOICE_NUMBER');">
-            &emsp;<label class="font-weight-bold" for="">By Purchase Date :&emsp;</label>
+            <label class="font-weight-bold" for="">Mencari :&emsp;</label>
+            <input type="number" class="form-control" id="by_voucher_number" placeholder="Nomor Vocer" onkeyup="searchPurchase(this.value, 'VOUCHER_NUMBER');">
+            &emsp;<input type="text" class="form-control" id="by_suppliers_name" placeholder="Nama Pemasok" onkeyup="searchPurchase(this.value, 'SUPPLIER_NAME');">
+            &emsp;<input type="number" class="form-control" id="by_invoice_number" placeholder="Faktur" onkeyup="searchPurchase(this.value, 'INVOICE_NUMBER');">
+            &emsp;<label class="font-weight-bold" for="">Tanggal :&emsp;</label>
             <input type="date" class="form-control" id="by_purchase_date" onchange="searchPurchase(this.value, 'PURCHASE_DATE');">
             &emsp;
             <select class="form-control" onchange="searchPurchase(this.value, 'PAYMENT_STATUS');">
@@ -57,14 +57,14 @@
             	<table class="table table-bordered table-striped table-hover">
             		<thead>
             			<tr>
-            				<th style="width: 1%;">SL.</th>
-                    <th style="width: 12%;">Voucher Number</th>
-                    <th style="width: 18%;">Supplier Name</th>
-            				<th style="width: 12%;">Invoice Number</th>
-                    <th style="width: 15%;">Purchase Date</th>
-                    <th style="width: 10%;">Total Amount</th>
-                    <th style="width: 12%;">Payment Status</th>
-                    <th style="width: 12%;">Action</th>
+            				<th style="width: 1%;">No.</th>
+                    <th style="width: 12%;">Nomor Vocer</th>
+                    <th style="width: 18%;">Nama Pemasok</th>
+            				<th style="width: 12%;">Nomor Faktur</th>
+                    <th style="width: 15%;">Tanggal Pembelian</th>
+                    <th style="width: 10%;">Jumlah</th>
+                    <th style="width: 12%;">Status Pembayaran</th>
+                    <th style="width: 12%;">Tindakan</th>
             			</tr>
             		</thead>
                 <tbody id="purchases_div">

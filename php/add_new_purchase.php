@@ -98,7 +98,7 @@
       ?>
       <div class="row col col-md-12">
         <div class="col col-md-2">
-          <input type="text" class="form-control" placeholder="Medicine Name" name="medicine_name">
+          <input type="text" class="form-control" placeholder="Nama Obat" name="medicine_name">
           <code class="text-danger small font-weight-bold float-right" id="medicine_name_error_<?php echo $row_number; ?>" style="display: none;"></code>
         </div>
         <div class="col col-md-1">
@@ -138,9 +138,9 @@
         </div>
       </div><br>
       <div class="row col col-md-8">
-        <div class="col col-md-4"><label for="generic_name" class="font-weight-bold">&nbsp;If new medicine, generic name : </label></div>
+        <div class="col col-md-4"><label for="generic_name" class="font-weight-bold">&nbsp;Obat Baru, Nama Generik : </label></div>
         <div class="col col-md-8">
-          <input type="text" class="form-control" placeholder="Generic Name" name="generic_name">
+          <input type="text" class="form-control" placeholder="Nama Generik" name="generic_name">
           <code class="text-danger small font-weight-bold float-right" id="generic_name_error_<?php echo $row_number; ?>" style="display: none;"></code>
         </div>
       </div>

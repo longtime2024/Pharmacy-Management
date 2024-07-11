@@ -22,7 +22,7 @@
         <!-- header section -->
         <?php
           require "php/header.php";
-          createHeader('handshake', 'Add Customer', 'Add New Customer');
+          createHeader('handshake', 'Tambahkan Pelanggan', 'Tambah Pelanggan Baru');
           // header section end
         ?>
         <div class="row">

@@ -10,12 +10,12 @@ function showPurchases($start_date, $end_date) {
   ?>
   <thead>
     <tr>
-      <th>SL</th>
-      <th>Purchase Date</th>
-      <th>Voucher Number</th>
-      <th>Invoice No</th>
-      <th>Supplier Name</th>
-      <th>Total Amount</th>
+      <th>No</th>
+      <th>Tanggal Pembelian</th>
+      <th>Nomor Vocer</th>
+      <th>Nomor Faktur</th>
+      <th>Nama Pemasok</th>
+      <th>Jumlah Total</th>
     </tr>
   </thead>
   <tbody>
@@ -38,7 +38,7 @@ function showPurchases($start_date, $end_date) {
     </tbody>
     <tfoot class="font-weight-bold">
       <tr style="text-align: right; font-size: 24px;">
-        <td colspan="5" style="color: green;">&nbsp;Total Purchases =</td>
+        <td colspan="5" style="color: green;">&nbsp;Jumlah Pembelian =</td>
         <td style="color: red;"><?php echo $total; ?></td>
       </tr>
     </tfoot>
@@ -63,11 +63,11 @@ function showSales($start_date, $end_date) {
   ?>
   <thead>
     <tr>
-      <th>SL</th>
-      <th>Sales Date</th>
-      <th>Invoice Number</th>
-      <th>Customer Name</th>
-      <th>Total Amount</th>
+      <th>No</th>
+      <th>Tanggal</th>
+      <th>Nomor Faktur</th>
+      <th>Nama Pelanggan</th>
+      <th>Jumlah Total</th>
     </tr>
   </thead>
   <tbody>
@@ -91,7 +91,7 @@ function showSales($start_date, $end_date) {
     </tbody>
     <tfoot class="font-weight-bold">
       <tr style="text-align: right; font-size: 24px;">
-        <td colspan="4" style="color: green;">&nbsp;Total Sales =</td>
+        <td colspan="4" style="color: green;">&nbsp;Jumlah Penjualan =</td>
         <td class="text-primary"><?php echo $total; ?></td>
       </tr>
     </tfoot>

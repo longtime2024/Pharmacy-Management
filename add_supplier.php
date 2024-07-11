@@ -23,7 +23,7 @@
         <!-- header section -->
         <?php
           require "php/header.php";
-          createHeader('group', 'Add Supplier', 'Add New Supplier');
+          createHeader('group', 'Tambahkan Pemasok', 'Tambah Pemasok Baru');
           // header section end
         ?>
         <div class="row">

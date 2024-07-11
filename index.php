@@ -17,7 +17,7 @@
         <div class="card-body">
           <form name="login-form" class="login-form" action="home.php" method="post" onsubmit="return validateCredentials();">
             <div class="logo">
-        			<img src="images/prof.jpg" class="profile"/>
+        			<img src="images/tamifarma.png" class="profile"/>
         			<h1 class="logo-caption"><span class="tweak">L</span>ogin</h1>
         		</div> <!-- logo class -->
             <div class="input-group form-group">

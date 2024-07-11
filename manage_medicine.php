@@ -25,7 +25,7 @@
         <!-- header section -->
         <?php
           require "php/header.php";
-          createHeader('shopping-bag', 'Manage Medicines', 'Manage Existing Medicine');
+          createHeader('shopping-bag', 'Kelola Obat', 'Pengelolaan Obat');
         ?>
         <!-- header section end -->
 
@@ -33,10 +33,10 @@
         <div class="row">
 
           <div class="col-md-12 form-group form-inline">
-            <label class="font-weight-bold" for="">Search :&emsp;</label>
-            <input type="text" class="form-control" id="by_name" placeholder="By Medicine Name" onkeyup="searchMedicine(this.value, 'name');">
-            &emsp;<input type="text" class="form-control" id="by_generic_name" placeholder="By Generic Name" onkeyup="searchMedicine(this.value, 'generic_name');">
-            &emsp;<input type="text" class="form-control" id="by_suppliers_name" placeholder="By Supplier Name" onkeyup="searchMedicine(this.value, 'suppliers_name');">
+            <label class="font-weight-bold" for="">Mencari :&emsp;</label>
+            <input type="text" class="form-control" id="by_name" placeholder="Nama Obat" onkeyup="searchMedicine(this.value, 'name');">
+            &emsp;<input type="text" class="form-control" id="by_generic_name" placeholder="Nama Generik" onkeyup="searchMedicine(this.value, 'generic_name');">
+            &emsp;<input type="text" class="form-control" id="by_suppliers_name" placeholder="Nama Pemasok" onkeyup="searchMedicine(this.value, 'suppliers_name');">
           </div>
 
           <div class="col col-md-12">
@@ -48,12 +48,12 @@
             	<table class="table table-bordered table-striped table-hover">
             		<thead>
             			<tr>
-            				<th style="width: 5%;">SL.</th>
-            				<th style="width: 20%;">Medicine Nama</th>
-                    <th style="width: 10%;">Packing</th>
-                    <th style="width: 30%;">Generic Name</th>
-            				<th style="width: 20%;">Supplier</th>
-                    <th style="width: 15%;">Action</th>
+            				<th style="width: 5%;">No.</th>
+            				<th style="width: 20%;">Nama Obat</th>
+                    <th style="width: 10%;">Dikemas</th>
+                    <th style="width: 30%;">Nama Generik</th>
+            				<th style="width: 20%;">Pemasok</th>
+                    <th style="width: 15%;">Tindakan</th>
             			</tr>
             		</thead>
             		<tbody id="medicines_div">

@@ -24,7 +24,7 @@
         <!-- header section -->
         <?php
           require "php/header.php";
-          createHeader('book', 'Purchase Report', 'Showing Purchase Report');
+          createHeader('book', 'Laporan Pembelian', 'Tampilkan laporan Pembelian');
         ?>
         <!-- header section end -->
 
@@ -32,10 +32,10 @@
         <div class="row">
 
           <div class="col-md-12 form-group form-inline">
-            <label class="font-weight-bold" for="">Start Date :&emsp;</label>
+            <label class="font-weight-bold" for="">Mulai Tanggal :&emsp;</label>
             <input type="date" class="form-control" id="start_date" onchange="showReport('purchase');">
             &emsp;
-            <label class="font-weight-bold" for="">End Date :&emsp;</label>
+            <label class="font-weight-bold" for="">Akhir Tanggal :&emsp;</label>
             <input type="date" class="form-control" id="end_date" onchange="showReport('purchase');">
             &emsp;
             <button class="btn btn-success" onclick="location.reload();"><i class="fa fa-refresh"></i></button>
@@ -57,7 +57,7 @@
           </div>
 
           <div class="col-md-12 text-center">
-            <button class="btn btn-primary" onclick="printReport('Purchase');">Print</button>
+            <button class="btn btn-primary" onclick="printReport('Purchase');">Cetak</button>
           </div>
 
         </div>

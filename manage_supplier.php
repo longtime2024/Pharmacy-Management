@@ -25,7 +25,7 @@
         <!-- header section -->
         <?php
           require "php/header.php";
-          createHeader('group', 'Manage Supplier', 'Manage Existing Supplier');
+          createHeader('group', 'Kelola Pemasok', 'Pengelolaan Pemasok');
         ?>
         <!-- header section end -->
 
@@ -33,8 +33,8 @@
         <div class="row">
 
           <div class="col-md-12 form-group form-inline">
-            <label class="font-weight-bold" for="">Search :&emsp;</label>
-            <input type="text" class="form-control" id="" placeholder="Search Supplier" onkeyup="searchSupplier(this.value);">
+            <label class="font-weight-bold" for="">Mencari :&emsp;</label>
+            <input type="text" class="form-control" id="" placeholder="Pemasok" onkeyup="searchSupplier(this.value);">
           </div>
 
           <div class="col col-md-12">
@@ -46,13 +46,13 @@
             	<table class="table table-bordered table-striped table-hover">
             		<thead>
             			<tr>
-                    <th style="width: 5%;">SL</th>
-            				<th style="width: 10%;">ID</th>
-            				<th style="width: 20%;">Name</th>
+                    <th style="width: 5%;">No</th>
+            				<th style="width: 10%;">Id</th>
+            				<th style="width: 20%;">Nama</th>
                     <th style="width: 15%;">Email</th>
-                    <th style="width: 15%;">Contact Number</th>
-                    <th style="width: 20%;">Address</th>
-                    <th style="width: 15%;">Action</th>
+                    <th style="width: 15%;">Nomor Kontak</th>
+                    <th style="width: 20%;">Alamat</th>
+                    <th style="width: 15%;">Tindakan</th>
             			</tr>
             		</thead>
                 <tbody id="suppliers_div">

@@ -42,7 +42,7 @@
         <!-- header section -->
         <?php
           require "php/header.php";
-          createHeader('bar-chart', 'Add Purchase', 'Add New Purchase');
+          createHeader('bar-chart', 'Tambahkan Pembelian', 'Tambah Pembelian Baru');
         ?>
         <!-- header section end -->
 
@@ -52,15 +52,15 @@
           <div class="row col col-md-12">
 
             <div class="col col-md-4 form-group">
-              <label class="font-weight-bold" for="suppliers_name">Supplier :</label>
-              <input id="suppliers_name" type="text" class="form-control" placeholder="Supplier Name" name="suppliers_name" onkeyup="showSuggestions(this.value, 'supplier');">
+              <label class="font-weight-bold" for="suppliers_name">Pemasok :</label>
+              <input id="suppliers_name" type="text" class="form-control" placeholder="Nama Pemasok" name="suppliers_name" onkeyup="showSuggestions(this.value, 'supplier');">
               <code class="text-danger small font-weight-bold float-right" id="supplier_name_error" style="display: none;"></code>
               <div id="supplier_suggestions" class="list-group position-fixed" style="z-index: 1; width: 25.10%; overflow: auto; max-height: 200px;"></div>
             </div>
 
             <div class="col col-md-2 form-group">
-              <label class="font-weight-bold" for="">Invoice Number :</label>
-              <input type="number" class="form-control" placeholder="Invoice Number" id="invoice_number" name="invoice_number" onblur="notNull(this.value, 'invoice_number_error'); checkInvoice(this.value, 'invoice_number_error');">
+              <label class="font-weight-bold" for="">Nomor Faktur :</label>
+              <input type="number" class="form-control" placeholder="Nomor" id="invoice_number" name="invoice_number" onblur="notNull(this.value, 'invoice_number_error'); checkInvoice(this.value, 'invoice_number_error');">
               <code class="text-danger small font-weight-bold float-right" id="invoice_number_error" style="display: none;"></code>
             </div>
 
@@ -72,7 +72,7 @@
             -->
 
             <div class="col col-md-2 form-group">
-              <label class="font-weight-bold" for="paytype">Payment Type :</label>
+              <label class="font-weight-bold" for="paytype">Tipe Pembayaran :</label>
               <select id="payment_type" name="paytype" class="form-control">
               	<option value="Cash Payment">Cash Payment</option>
                 <option value="Net Banking">Net Banking</option>
@@ -81,7 +81,7 @@
             </div>
 
             <div class="col col-md-2 form-group">
-               <label class="font-weight-bold" for="invoice_date">Date :</label>
+               <label class="font-weight-bold" for="invoice_date">Tanggal :</label>
               <input type="date" class="datepicker form-control hasDatepicker" id="invoice_date" name="invoice_date" value='<?php echo date('Y-m-d'); ?>' onblur="checkDate(this.value, 'date_error');">
               <code class="text-danger small font-weight-bold float-right" id="date_error" style="display: none;"></code>
             </div>
@@ -90,7 +90,7 @@
 
           <div class="row col col-md-12">
             <div class="col col-md-2 font-weight-bold" style="color: green; cursor:pointer" onclick="document.getElementById('add_new_supplier_model').style.display = 'block';">
-            	<i class="fa fa-plus"></i>&nbsp;Add New Supplier
+            	<i class="fa fa-plus"></i>&nbsp;Tambah Pemasok Baru
             </div>
           </div>
           <!-- supplier details content end -->
@@ -101,16 +101,16 @@
 
           <!-- add medicines -->
           <div class="row col col-md-12 font-weight-bold">
-            <div class="col col-md-2">Medicine Name</div>
-            <div class="col col-md-1">Packing</div>
-            <div class="col col-md-2">Batch ID</div>
-            <div class="col col-md-1">Ex. Date (mm/yy)</div>
-            <div class="col col-md-1">Quantity</div>
-            <div class="col col-md-1">MRP</div>
-            <div class="col col-md-1">Rate</div>
+            <div class="col col-md-2">Nama Obat</div>
+            <div class="col col-md-1">Dikemas</div>
+            <div class="col col-md-2">Id</div>
+            <div class="col col-md-1">Expired</div>
+            <div class="col col-md-1">Jumlah</div>
+            <div class="col col-md-1">Control</div>
+            <div class="col col-md-1">Nilai</div>
             <div class="row col col-md-3">
-              <div class="col col-md-7">Amount</div>
-              <div class="col col-md-5">Action</div>
+              <div class="col col-md-7">Jumlah</div>
+              <div class="col col-md-5">Tindakan</div>
             </div>
           </div>
           <div class="col col-md-12">
@@ -124,7 +124,7 @@
           <div class="row col col-md-12">
             <div class="col col-md-10"></div>
             <div class="col col-md-2 form-group float-right">
-              <label class="font-weight-bold" for="">Grand Total :</label>
+              <label class="font-weight-bold" for="">Total Keseluruhan :</label>
               <input type="text" class="form-control" id="grand_total" name="grand_total" disabled>
             </div>
           </div>
@@ -133,7 +133,7 @@
           <div class="row col col-md-12">
             <div class="col col-md-5"></div>
             <div class="col col-md-2 form-group">
-              <button class="btn btn-primary form-control" onclick="addPurchase();">ADD</button>
+              <button class="btn btn-primary form-control" onclick="addPurchase();">Tambah</button>
             </div>
             <div class="col col-md-5"></div>
           </div>

@@ -40,7 +40,7 @@
         <!-- header section -->
         <?php
           require "php/header.php";
-          createHeader('shopping-bag', 'Add Medicine', 'Add New Medicine');
+          createHeader('shopping-bag', 'Tambahkan Obat', 'Tambah Obat Baru');
         ?>
         <!-- header section end -->
 
