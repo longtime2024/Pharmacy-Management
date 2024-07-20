@@ -168,23 +168,72 @@
   }
 
   function addSale() {
-    $customer_id = getCustomerId(strtoupper($_GET['customers_name']), $_GET['customers_contact_number']);
+    // Mendapatkan data dari $_GET
+    $customer_name = strtoupper($_GET['customers_name']);
+    $customer_contact = $_GET['customers_contact_number'];
     $invoice_number = $_GET['invoice_number'];
     $medicine_name = $_GET['medicine_name'];
     $batch_id = $_GET['batch_id'];
-    $expiry_date = $_GET['expiry_date'];
+    $expiry_date = date('Y-m-d', strtotime($_GET['expiry_date'])); // Format tanggal ke 'YYYY-MM-DD'
     $quantity = $_GET['quantity'];
     $mrp = $_GET['mrp'];
     $discount = $_GET['discount'];
     $total = $_GET['total'];
 
+    // Mendapatkan ID pelanggan menggunakan fungsi getCustomerId
+    $customer_id = getCustomerId($customer_name, $customer_contact);
+
+    // Melakukan koneksi ke database
     require "db_connection.php";
-    if($con) {
-      $query = "INSERT INTO sales (CUSTOMER_ID, INVOICE_NUMBER, MEDICINE_NAME, BATCH_ID, EXPIRY_DATE, QUANTITY, MRP, DISCOUNT, TOTAL) VALUES($customer_id, $invoice_number, '$medicine_name', '$batch_id', '$expiry_date', $quantity, $mrp, $discount, $total)";
-      $result = mysqli_query($con, $query);
-      echo ($result) ? "inserted sale" : "falied to add sale...";
+    
+    // Memastikan koneksi berhasil
+    if ($con) {
+        // Memulai transaksi untuk memastikan konsistensi data
+        mysqli_begin_transaction($con);
+
+        // Query untuk mengurangi stok obat dari medicines_stock
+        $query_update_stock = "UPDATE medicines_stock SET QUANTITY = QUANTITY - ? WHERE NAME = ? AND BATCH_ID = ?";
+        
+        // Persiapan statement untuk update stok
+        $stmt_update_stock = mysqli_prepare($con, $query_update_stock);
+        mysqli_stmt_bind_param($stmt_update_stock, "iss", $quantity, $medicine_name, $batch_id);
+
+        // Eksekusi statement update stok
+        $update_stock_result = mysqli_stmt_execute($stmt_update_stock);
+
+        // Query untuk menyimpan data penjualan ke dalam tabel sales
+        $query_insert_sale = "INSERT INTO sales (CUSTOMER_ID, INVOICE_NUMBER, MEDICINE_NAME, BATCH_ID, EXPIRY_DATE, QUANTITY, MRP, DISCOUNT, TOTAL) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        
+        // Persiapan statement untuk insert data penjualan
+        $stmt_insert_sale = mysqli_prepare($con, $query_insert_sale);
+        mysqli_stmt_bind_param($stmt_insert_sale, "isssssddd", $customer_id, $invoice_number, $medicine_name, $batch_id, $expiry_date, $quantity, $mrp, $discount, $total);
+
+        // Eksekusi statement insert data penjualan
+        $insert_sale_result = mysqli_stmt_execute($stmt_insert_sale);
+
+        // Memeriksa hasil eksekusi query
+        if ($update_stock_result && $insert_sale_result) {
+            // Commit transaksi jika semua query berhasil dieksekusi
+            mysqli_commit($con);
+            echo "Sale added successfully.";
+        } else {
+            // Rollback transaksi jika terjadi error pada salah satu query
+            mysqli_rollback($con);
+            echo "Failed to add sale.";
+        }
+
+        // Menutup statement
+        mysqli_stmt_close($stmt_update_stock);
+        mysqli_stmt_close($stmt_insert_sale);
+    } else {
+        echo "Failed to connect to database.";
     }
-  }
+
+    // Menutup koneksi
+    mysqli_close($con);
+}
+
+
 
   function addNewInvoice() {
     $customer_id = getCustomerId(strtoupper($_GET['customers_name']), $_GET['customers_contact_number']);

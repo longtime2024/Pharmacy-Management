@@ -316,7 +316,7 @@ function updateStock(name, batch_id, quantity) {
   xhttp.send();
 }
 
-function addSale(customers_name, customers_contact_number, invoice_number, medicine_name, batch_id, expiry_date, quantity, mrp, discount, total) {
+function addSale(customers_name, customers_contact_number, invoice_number, medicine_name, batch_id, expiry_date.value, quantity, mrp, discount, total) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if(xhttp.readyState = 4 && xhttp.status == 200)
