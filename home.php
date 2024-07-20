@@ -118,7 +118,7 @@
 
         </div>
 
-        <hr style="border-top: 2px solid #ff5252;">
+        <hr style="border-top: 2px solid #06D001;">
 
         <div class="row">
 
@@ -147,7 +147,7 @@
         </div>
         <!-- form content end -->
 
-        <hr style="border-top: 2px solid #ff5252;">
+        <hr style="border-top: 2px solid #06D001;">
 
       </div>
     </div>

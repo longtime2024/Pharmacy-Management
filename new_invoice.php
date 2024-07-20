@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Tami Farma</title>
+    <title>Faktur Baru</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 		<script src="bootstrap/js/jquery.min.js"></script>
 		<script src="bootstrap/js/bootstrap.min.js"></script>
@@ -94,7 +94,7 @@
           <!-- closing new user button -->
 
           <div class="col col-md-12">
-            <hr class="col-md-12" style="padding: 0px; border-top: 3px solid  #02b6ff;">
+            <hr class="col-md-12" style="padding: 0px; border-top: 3px solid  #06D001;">
           </div>
 
           <!-- add medicines -->
@@ -112,7 +112,7 @@
             </div>
           </div>
           <div class="col col-md-12">
-            <hr class="col-md-12" style="padding: 0px; border-top: 2px solid  #02b6ff;">
+            <hr class="col-md-12" style="padding: 0px; border-top: 2px solid  #06D001;">
           </div>
 
           <div class="row col col-md-12 " id="invoice_medicine_list_div">

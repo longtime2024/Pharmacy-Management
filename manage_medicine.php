@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Manage Medicines</title>
+    <title>Kelola Obat</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 		<script src="bootstrap/js/jquery.min.js"></script>
 		<script src="bootstrap/js/bootstrap.min.js"></script>
@@ -40,7 +40,7 @@
           </div>
 
           <div class="col col-md-12">
-            <hr class="col-md-12" style="padding: 0px; border-top: 2px solid  #02b6ff;">
+            <hr class="col-md-12" style="padding: 0px; border-top: 2px solid  #06D001;">
           </div>
 
           <div class="col col-md-12 table-responsive">
@@ -68,7 +68,7 @@
 
         </div>
         <!-- form content end -->
-        <hr style="border-top: 2px solid #ff5252;">
+        <hr style="border-top: 2px solid #06D001p';">
       </div>
     </div>
   </body>

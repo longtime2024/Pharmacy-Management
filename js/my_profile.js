@@ -25,45 +25,94 @@ function edit(action) {
 }
 
 function updateAdminDetails() {
-  var pharmacy_name = document.getElementById('pharmacy_name');
-  var address = document.getElementById('address');
-  var email = ocument.getElementById('email');
-  var contact_number = document.getElementById('contact_number');
-  var username = document.getElementById('username');
+  console.log("updateAdminDetails function called");
 
-  if(!validateName(pharmacy_name.value, 'pharmacy_name_error'))
-    pharmacy_name.focus();
-  else if(!validateAddress(address.value, 'address_error'))
-    address.focus();
-  else if(!notNull(email.value, 'email_error'))
-    email.focus();
-  else if(!validateContactNumber(contact_number.value, 'contact_number_error'))
-    contact_number.focus();
-  else if(!notNull(username.value, 'username_error'))
-    username.focus();
-  else if(username.value.indexOf(' ') >= 0) {
-    document.getElementById('username_error').style.display = "block";
-    document.getElementById('username_error').innerHTML = "mustn't contain spaces!";
-    username.focus();
-  }
-  else {
-    var password = prompt("Please enter password below to update details!");
-    if(validatePassword(password)) {
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if(xhttp.readyState = 4 && xhttp.status == 200)
+  var pharmacy_name = document.getElementById('pharmacy_name').value;
+  var address = document.getElementById('address').value;
+  var email = document.getElementById('email').value;
+  var contact_number = document.getElementById('contact_number').value;
+  var username = document.getElementById('username').value;
+
+  console.log("pharmacy_name:", pharmacy_name);
+  console.log("address:", address);
+  console.log("email:", email);
+  console.log("contact_number:", contact_number);
+  console.log("username:", username);
+
+  var password = prompt("Please enter password below to update details!");
+  if (validatePassword(password)) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (xhttp.readyState === 4) {
+        if (xhttp.status === 200) {
+          console.log('Server response:', xhttp.responseText);
           document.getElementById('admin_acknowledgement').innerHTML = xhttp.responseText;
-      };
-      xhttp.open("GET", "php/validateCredentials.php?action=update_admin_info&pharmacy_name=" + pharmacy_name.value + "&address=" + address.value + "&email=" + email.value + "&contact_number=" + contact_number.value + "&username=" + username.value, true);
-      xhttp.send();
-      edit(true);
-      return true;
-    }
-    else
-      document.getElementById('admin_acknowledgement').innerHTML = "<span class='text-danger'>Invalid Password!</span>";
-    return false;
+        } else {
+          console.log('Error:', xhttp.status, xhttp.statusText);
+        }
+      }
+    };
+    var url = "php/validateCredentials.php?action=update_admin_info&pharmacy_name=" + encodeURIComponent(pharmacy_name) + "&address=" + encodeURIComponent(address) + "&email=" + encodeURIComponent(email) + "&contact_number=" + encodeURIComponent(contact_number) + "&username=" + encodeURIComponent(username);
+    console.log('Request URL:', url);
+    xhttp.open("GET", url, true);
+    xhttp.send();
+    edit(true);
+    return true;
+  } else {
+    document.getElementById('admin_acknowledgement').innerHTML = "<span class='text-danger'>Invalid Password!</span>";
   }
+  return false;
 }
+
+function validatePassword(password) {
+  console.log("validatePassword function called with password:", password);
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState === 4 && xhttp.status === 200) {
+      console.log("validatePassword response:", xhttp.responseText);
+      return xhttp.responseText === "true";
+    }
+  };
+  xhttp.open("GET", "php/validateCredentials.php?action=validate_password&password=" + encodeURIComponent(password), false);
+  xhttp.send();
+  return xhttp.responseText === "true";
+}
+
+
+function validatePassword(password) {
+  console.log("validatePassword function called with password:", password);
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState === 4 && xhttp.status === 200) {
+      console.log("validatePassword response:", xhttp.responseText);
+      return xhttp.responseText === "true";
+    }
+  };
+  xhttp.open("GET", "php/validateCredentials.php?action=validate_password&password=" + encodeURIComponent(password), false);
+  xhttp.send();
+  return xhttp.responseText === "true";
+}
+
+
+function validatePassword(password) {
+  console.log("validatePassword function called with password:", password);
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState === 4 && xhttp.status === 200) {
+      console.log("validatePassword response:", xhttp.responseText);
+      return xhttp.responseText === "true";
+    }
+  };
+  xhttp.open("GET", "php/validateCredentials.php?action=validate_password&password=" + password, false);
+  xhttp.send();
+  return xhttp.responseText === "true";
+}
+
+
+
 
 function validatePassword(password) {
   var xhttp = new XMLHttpRequest();

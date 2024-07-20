@@ -102,8 +102,9 @@
                 <button class="btn btn-danger form-control font-weight-bold" onclick="edit(true);">CANCEL</button>
               </div>
               <div id="update_button" class="col col-md-4 form-group float-right">
-                <button class="btn btn-success form-control font-weight-bold" onclick="updateAdminDetails();">UPDATE</button>
-              </div>
+  <button class="btn btn-success form-control font-weight-bold" onclick="updateAdminDetails();">UPDATE</button>
+</div>
+
             </div>
             <!-- result message -->
             <div id="admin_acknowledgement" class="col-md-12 h5 text-success font-weight-bold text-center" style="font-family: sans-serif;"></div>
